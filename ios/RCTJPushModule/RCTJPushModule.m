@@ -244,6 +244,7 @@ RCT_EXPORT_METHOD(setBadge:(NSDictionary *)params)
 {
     if(params[BADGE]){
         NSNumber *number = params[BADGE];
+        [[UIApplication sharedApplication] setApplicationIconBadgeNumber:number];
         [JPUSHService setBadge:[number integerValue]];
     }
 }
